@@ -36,12 +36,12 @@ add_executable(EABaseTest ${SOURCES})
 #-------------------------------------------------------------------------------------------
 # Dependencies 
 #-------------------------------------------------------------------------------------------
-add_subdirectory(packages/EAAssert)
-add_subdirectory(packages/EAMain)
-add_subdirectory(packages/EASTL)
-add_subdirectory(packages/EAStdC)
-add_subdirectory(packages/EATest)
-add_subdirectory(packages/EAThread)
+include(packages/EAAssert.cmake)
+include(packages/EAMain.cmake)
+include(packages/EASTL.cmake)
+include(packages/EAStdC.cmake)
+include(packages/EATest.cmake)
+include(packages/EAThread.cmake)
 
 target_link_libraries(EABaseTest EAAssert)
 target_link_libraries(EABaseTest EAMain)
@@ -64,4 +64,3 @@ endif()
 #-------------------------------------------------------------------------------------------
 add_test(EABaseTestRuns EABaseTest)
 set_tests_properties (EABaseTestRuns PROPERTIES PASS_REGULAR_EXPRESSION "RETURNCODE=0")
-
